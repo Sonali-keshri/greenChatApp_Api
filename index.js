@@ -33,8 +33,8 @@ app.get('/', (req, res)=>{
 const io = socket(
     server,{
         cors:{
-            // origin:"http://localhost:3000",
-            origin:"https://unrivaled-tapioca-902288.netlify.app",
+            origin:"http://localhost:3000",
+            // origin:"https://unrivaled-tapioca-902288.netlify.app",
             credentials: true,
             optionSucessStatus: 200
         },
