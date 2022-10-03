@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URL, {
 });
 
 app.get('/', (req, res)=>{
-    res.json("server Start ")
+    res.json("server Start again ")
 })
 
 const io = socket(
