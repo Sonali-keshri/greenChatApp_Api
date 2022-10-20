@@ -7,14 +7,15 @@ const app = express();
 require('dotenv').config();
 const socket = require('socket.io');
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
  
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 
-const server = app.listen(process.env.PORT, ()=>{
-    console.log(`Server started on the Port ${process.env.PORT}`)
+const port = process.env.PORT || 5000;
+const server = app.listen(port, ()=>{
+    console.log(`Server started on the Port ${port}`)
 });
 
 mongoose.connect(process.env.MONGO_URL, {
@@ -33,10 +34,13 @@ app.get('/', (req, res)=>{
 const io = socket(
     server,{
         cors:{
-            origin:"http://localhost:3000",
+            origin:"http://localhost:3001",
             // origin:"https://unrivaled-tapioca-902288.netlify.app",
-            credentials: true,
-            optionSucessStatus: 200
+            // credentials: true,
+            // optionSucessStatus: 200
+            methods: ["GET", "POST"],
+            allowedHeaders: ["my-custom-header"],
+            credentials: true
         },
     }
 );
