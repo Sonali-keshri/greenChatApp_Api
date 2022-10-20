@@ -37,9 +37,9 @@ const io = socket(
             origin:"http://localhost:3001",
             // origin:"https://unrivaled-tapioca-902288.netlify.app",
             // credentials: true,
-            // optionSucessStatus: 200
-            methods: ["GET", "POST"],
-            allowedHeaders: ["my-custom-header"],
+            // methods: ["GET", "POST"],
+            // allowedHeaders: ["my-custom-header"],
+            optionSucessStatus: 200,
             credentials: true
         },
     }
