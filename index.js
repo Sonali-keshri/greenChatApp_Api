@@ -36,7 +36,7 @@ const io = socket(
         cors:{
             // origin:"http://localhost:3000",
             // origin:"https://unrivaled-tapioca-902288.netlify.app",
-            origin:true,
+            origin:'*',
             credentials: true,
             optionSucessStatus: 200
         },
